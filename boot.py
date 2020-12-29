@@ -8,13 +8,13 @@ import webrepl
 webrepl.start()
 gc.collect()
 # setup WiFi connection
-import wifi_connection
-wifi_connection.do_connect()
+# import wifi_connection
+# wifi_connection.do_connect()
 
-import _thread
-import script
+# import _thread
+# import script
 
-script.transit()    # Pivot
+# script.transit()    # Pivot
 # _thread.start_new_thread(script.detection, ())
 # _thread.start_new_thread(script.scan, ())
 

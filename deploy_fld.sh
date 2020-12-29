@@ -8,6 +8,9 @@ esptool.py --chip esp32 --port /dev/ttyUSB0 write_flash -z 0x1000 esp32-idf3-202
 sleep 3
 echo "\n load embedded software"
 python pyboard.py --device /dev/ttyUSB0 -f mkdir app
+python pyboard.py --device /dev/ttyUSB0 -c 'import machine'
+sleep 2
+python pyboard.py --device /dev/ttyUSB0 -c 'machine.reset()'
 python pyboard.py --device /dev/ttyUSB0 -f cp boot.py secret.py webrepl_cfg.py main.py :
 python pyboard.py --device /dev/ttyUSB0 -f cp app/__init__.py :app/__init__.py
 python pyboard.py --device /dev/ttyUSB0 -f cp app/httoclient.py:app/httoclient.py
