@@ -11,8 +11,9 @@ python pyboard.py --device /dev/ttyUSB0 -f mkdir app
 python pyboard.py --device /dev/ttyUSB0 -c 'import machine'
 sleep 2
 python pyboard.py --device /dev/ttyUSB0 -c 'machine.reset()'
-python pyboard.py --device /dev/ttyUSB0 -f cp boot.py secret.py webrepl_cfg.py main.py :
+python pyboard.py --device /dev/ttyUSB0 -f cp boot.py  webrepl_cfg.py main.py :
 python pyboard.py --device /dev/ttyUSB0 -f cp app/__init__.py :app/__init__.py
+python pyboard.py --device /dev/ttyUSB0 -f cp app/secrets.py :app/secrets.py
 python pyboard.py --device /dev/ttyUSB0 -f cp app/httoclient.py:app/httoclient.py
 python pyboard.py --device /dev/ttyUSB0 -f cp app/ota_updater.py:app/ota_updater.py
 python pyboard.py --device /dev/ttyUSB0 -f cp app/start.py:app/start.py
