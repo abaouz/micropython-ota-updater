@@ -11,18 +11,24 @@ python pyboard.py --device /dev/ttyUSB0 -f mkdir app
 python pyboard.py --device /dev/ttyUSB0 -c 'import machine'
 sleep 2
 python pyboard.py --device /dev/ttyUSB0 -c 'machine.reset()'
+sleep 5
 python pyboard.py --device /dev/ttyUSB0 -f cp boot.py  webrepl_cfg.py main.py :
+sleep 1
 python pyboard.py --device /dev/ttyUSB0 -f cp app/__init__.py :app/__init__.py
+sleep 1
 python pyboard.py --device /dev/ttyUSB0 -f cp app/secrets.py :app/secrets.py
-python pyboard.py --device /dev/ttyUSB0 -f cp app/httoclient.py:app/httoclient.py
-python pyboard.py --device /dev/ttyUSB0 -f cp app/ota_updater.py:app/ota_updater.py
-python pyboard.py --device /dev/ttyUSB0 -f cp app/start.py:app/start.py
+sleep 1
+python pyboard.py --device /dev/ttyUSB0 -f cp app/httpclient.py :app/httpclient.py
+sleep 1
+python pyboard.py --device /dev/ttyUSB0 -f cp app/ota_updater.py :app/ota_updater.py
+sleep 1
+python pyboard.py --device /dev/ttyUSB0 -f cp app/start.py :app/start.py
 sleep 3
 echo "\n Display Sensor ID (mac adresse)"
 python pyboard.py --device /dev/ttyUSB0 -c 'import machine'
 sleep 2
 python pyboard.py --device /dev/ttyUSB0 -c 'machine.reset()'
 sleep 5
-python pyboard.py --device /dev/ttyUSB0 -c 'print(script.mac_addr)'
+# python pyboard.py --device /dev/ttyUSB0 -c 'print(script.mac_addr)'
 sleep 3
 echo "\n Success :-)"
