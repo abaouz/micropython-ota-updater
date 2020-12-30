@@ -17,6 +17,7 @@ def connectToWifiAndUpdate():
     print('network config:', sta_if.ifconfig())
     # otaUpdater = OTAUpdater('https://github.com/rdehuyss/micropython-ota-updater', main_dir='app', secrets_file="secrets.py")
     otaUpdater = OTAUpdater('https://github.com/abaouz/micropython-ota-updater', main_dir='app', secrets_file="secrets.py")
+    print ("**OTAUpdater**", OTAUpdater)
     hasUpdated = otaUpdater.install_update_if_available()
     if hasUpdated:
         machine.reset()

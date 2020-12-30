@@ -13,7 +13,7 @@ class Response:
                     outfile.write(data)
                     data = self._socket.read(CHUNK_SIZE)
                 outfile.close()
-                
+
             self.close()
 
     def close(self):
@@ -142,6 +142,7 @@ class HttpClient:
         return self.request('HEAD', url, **kw)
 
     def get(self, url, **kw):
+        print('**url**', url)
         return self.request('GET', url, **kw)
 
     def post(self, url, **kw):

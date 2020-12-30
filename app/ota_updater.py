@@ -123,6 +123,7 @@ class OTAUpdater:
 
     def get_latest_version(self):
         latest_release = self.http_client.get('https://api.github.com/repos/{}/releases/latest'.format(self.github_repo))
+        print('**latest_release**', latest_release.json())
         version = latest_release.json()['tag_name']
         latest_release.close()
         return version
